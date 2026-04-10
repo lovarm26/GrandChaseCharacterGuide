@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Characters{% endblock %}
+{% block content %}
+<div class="container py-5">
+    <h1 class="mb-4">All Characters</h1>
+    <input type="text" id="searchInput" class="form-control mb-4" placeholder="Search characters..." onkeyup="filterCharacters()">
+
+    <div class="row g-4" id="characterGrid">
+        {% for slug, char in characters.items() %}
+        <div class="col-md-4 col-lg-3 character-card" data-name="{{ char.name }}">
+            <div class="card bg-secondary h-100">
+                <img src="{{ char.image }}" class="card-img-top" alt="{{ char.name }}">
+                <div class="card-body">
+                    <h5>{{ char.name }}</h5>
+                    <p class="text-muted">{{ char.role }}</p>
+                    <a href="/character/{{ slug }}" class="btn btn-danger w-100">Growth Guide →</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

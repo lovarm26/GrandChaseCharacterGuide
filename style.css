@@ -1,0 +1,4 @@
+body { transition: background-color 0.3s; }
+.hero { height: 400px; display: flex; align-items: center; justify-content: center; color: white; }
+.card { transition: transform 0.3s; }
+.card:hover { transform: scale(1.05); }

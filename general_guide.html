@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}General Growth Guide{% endblock %}
+{% block content %}
+<div class="container py-5">
+    <h1 class="mb-4">General Character Growth Guide</h1>
+    
+    <div class="accordion" id="guideAccordion">
+        <div class="accordion-item bg-secondary">
+            <h2 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#lvl">Leveling 1-85</button></h2>
+            <div id="lvl" class="accordion-collapse collapse show">
+                <div class="accordion-body">
+                    Complete story quests once. Use Angel Ring at Lv20 (+50% EXP). Run Hero Dungeons daily. Aim for 85 in 4-6 hours on main.
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item bg-secondary">
+            <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#job">Job Changes</button></h2>
+            <div id="job" class="accordion-collapse collapse">
+                <div class="accordion-body">Unlock 2nd, 3rd, and 4th jobs through mission chains. Prioritize characters with fewer jobs for faster leveling.</div>
+            </div>
+        </div>
+        <div class="accordion-item bg-secondary">
+            <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#awake">Awakening (Post-85)</button></h2>
+            <div id="awake" class="accordion-collapse collapse">
+                <div class="accordion-body">New 4th bar special skill + stat growth. Prioritize main DPS first (Nelia/Europa/Uno meta).</div>
+            </div>
+        </div>
+        <div class="accordion-item bg-secondary">
+            <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#equip">Equipment & Coordi</button></h2>
+            <div id="equip" class="accordion-collapse collapse">
+                <div class="accordion-body">Reinforce to +15, collect Coordi fragments from Hero Dungeons. Chase Coordi collection for crit bonuses.</div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

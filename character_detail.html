@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %}{{ char.name }} - Growth Guide{% endblock %}
+{% block content %}
+<div class="container py-5">
+    <a href="/characters" class="btn btn-outline-light mb-3">← Back to Characters</a>
+    
+    <div class="row">
+        <div class="col-lg-4">
+            <img src="{{ char.image }}" class="img-fluid rounded shadow" alt="{{ char.name }}">
+            <h1 class="mt-3">{{ char.name }}</h1>
+            <h5 class="text-danger">{{ char.role }}</h5>
+            <p>{{ char.description }}</p>
+        </div>
+        
+        <div class="col-lg-8">
+            <ul class="nav nav-tabs mb-4" id="guideTabs">
+                <li class="nav-item"><a class="nav-link active" data-bs-toggle="tab" href="#overview">Overview</a></li>
+                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#leveling">Leveling</a></li>
+                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#jobs">Job Path</a></li>
+                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#skills">Skills</a></li>
+                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#equipment">Equipment</a></li>
+                <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#awakening">Awakening</a></li>
+            </ul>
+            
+            <div class="tab-content">
+                <div class="tab-pane fade show active" id="overview">
+                    <p>{{ char.description }}</p>
+                </div>
+                <div class="tab-pane fade" id="leveling"><p><strong>Leveling Tips:</strong> {{ char.leveling_tips }}</p></div>
+                <div class="tab-pane fade" id="jobs"><p><strong>Recommended Job Path:</strong> {{ char.job_path }}</p></div>
+                <div class="tab-pane fade" id="skills"><p><strong>Skill Priority:</strong> {{ char.skill_recommend }}</p></div>
+                <div class="tab-pane fade" id="equipment"><p><strong>Equipment Recommendation:</strong> {{ char.equipment }}</p></div>
+                <div class="tab-pane fade" id="awakening"><p><strong>Awakening Guide:</strong> {{ char.awakening }}</p></div>
+            </div>
+            
+            <div class="mt-5">
+                <h5>Pro Tips</h5>
+                <p>{{ char.tips }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Home - Grand Chase Growth Guide{% endblock %}
+{% block content %}
+<div class="hero text-center py-5" style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://picsum.photos/id/1015/2000/800'); background-size: cover;">
+    <h1 class="display-3 fw-bold">Character Growth Guide</h1>
+    <p class="lead">Level 1 → 85 → Endgame in Grand Chase Classic</p>
+    <a href="/characters" class="btn btn-danger btn-lg">Browse Characters</a>
+</div>
+
+<div class="container py-5">
+    <h2 class="text-center mb-4">Featured Characters</h2>
+    <div class="row g-4">
+        {% for slug, char in characters.items() %}
+        <div class="col-md-3 col-sm-6">
+            <div class="card bg-secondary h-100">
+                <img src="{{ char.image }}" class="card-img-top" alt="{{ char.name }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ char.name }}</h5>
+                    <p class="card-text">{{ char.role }}</p>
+                    <a href="/character/{{ slug }}" class="btn btn-outline-danger">View Guide</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
